@@ -3,18 +3,25 @@ import "./Home.css";
 import profile from "../assets/profile.jpg";
 
 function Home() {
-  const actions = ["Full Stack-Developer", "Python. Flask. Django", "Responsive Web.APIs","Open to work"];
+  const actions = [
+    "Full Stack Developer",
+    "Python • Flask • Django",
+    "Responsive Web & APIs",
+    "Open to Work",
+  ];
 
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
   const [char, setChar] = useState(0);
 
   useEffect(() => {
-    if (char < actions[index].length) {
+    const current = actions[index];
+
+    if (char < current.length) {
       const t = setTimeout(() => {
-        setText((p) => p + actions[index][char]);
-        setChar(char + 1);
-      }, 100);
+        setText((prev) => prev + current[char]);
+        setChar((c) => c + 1);
+      }, 90);
       return () => clearTimeout(t);
     } else {
       const t = setTimeout(() => {
@@ -24,10 +31,10 @@ function Home() {
       }, 1200);
       return () => clearTimeout(t);
     }
-  }, [char, index]);
+  }, [char, index, actions]);
 
   return (
-    <section className="hero">
+    <section className="hero" id="home">
       <div className="hero-container">
         {/* LEFT */}
         <div className="hero-left">
@@ -35,10 +42,9 @@ function Home() {
 
           <h1>SARAN S</h1>
 
-          {/* THIS LINE MUST MATCH SCREENSHOT */}
           <h2 className="title-line">
             Python Full-Stack Developer
-            <span className="dot">  • </span>
+            <span className="dot"> • </span>
             Chennai, India
           </h2>
 
@@ -53,28 +59,37 @@ function Home() {
             SQL/NoSQL, Automation & Deployment
           </p>
 
-          {/* ACTION / TYPING TEXT */}
+          {/* TYPING TEXT */}
           <p className="action-text">
             <span className="typing">{text}</span>
             <span className="cursor">|</span>
           </p>
 
+          {/* ACTION BUTTONS */}
           <div className="hero-actions">
-            <a href="/resume.pdf" className="btn primary">Download cv</a>
-            <a href="/contact" className="btn primary">Contact me</a>
-          </div>
+            {/* ✅ FORCE DOWNLOAD */}
+            <a
+              href="/resume.pdf"
+              download="Saran_S_Resume.pdf"
+              className="btn primary"
+            >
+              Download CV
+            </a>
 
-          
+            {/* ✅ SCROLL TO CONTACT */}
+            <a href="#contact" className="btn secondary">
+              Contact Me
+            </a>
+          </div>
         </div>
 
         {/* RIGHT IMAGE */}
         <div className="hero-right">
-          <img src={profile} alt="Saran SK" />
+          <img src={profile} alt="Saran S" />
         </div>
       </div>
     </section>
   );
- 
 }
 
 export default Home;
