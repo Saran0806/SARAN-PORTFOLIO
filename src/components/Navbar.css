@@ -1,0 +1,135 @@
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #114e6e;
+  padding: 16px 20px;
+}
+
+/* CONTAINER */
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* IMPORTANT for dropdown */
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.logo-box {
+  background: #00e5ff;
+  color: #000;
+  font-weight: 800;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* =========================
+   DESKTOP LINKS
+========================= */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hire-btn {
+  background: #00e5ff;
+  color: #000 !important;
+  padding: 10px 18px;
+  border-radius: 22px;
+  font-weight: 600;
+}
+
+/* =========================
+   MOBILE MENU ICON
+========================= */
+.menu-icon {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+/* =========================
+   MOBILE DROPDOWN MENU
+========================= */
+.mobile-dropdown {
+  position: absolute;
+  top: 100%;          /* below navbar */
+  left: 0;
+  width: 100%;
+  background: #114e6e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+  gap: 20px;
+  z-index: 99;
+}
+
+/* DROPDOWN LINKS */
+.mobile-dropdown a {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 0;
+}
+
+/* Divider */
+.mobile-dropdown a:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+.nav-links button,
+.mobile-dropdown button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.nav-links button:hover,
+.mobile-dropdown button:hover {
+  color: #00f5ff;
+}

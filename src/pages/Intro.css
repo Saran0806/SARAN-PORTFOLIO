@@ -1,0 +1,108 @@
+/* SECTION */
+.intro {
+  min-height: 100vh;
+  min-width: 100vw;
+  
+  background: linear-gradient(
+    135deg,
+    #2b1055 0%,
+    #4b1c7a 30%,
+    #7b2cbf 55%,
+    #c33c9a 75%,
+    #ff6a88 100%
+  );
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+/* CONTAINER */
+.intro-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+/* LEFT IMAGE */
+.intro-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-left img {
+  width: 420px;
+  max-width: 100%;
+}
+
+/* RIGHT CONTENT */
+.intro-right {
+  flex: 1;
+}
+
+.intro-sub {
+  color: #00f5ff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.intro-right h1 {
+  font-size: 2.8rem;
+  margin: 10px 0 20px;
+}
+
+.intro-text {
+  line-height: 1.8;
+  color: #f0eaff;
+  margin-bottom: 16px;
+  max-width: 520px;
+}
+
+/* DETAILS */
+.intro-details {
+  margin-top: 20px;
+}
+
+.intro-details p {
+  margin-bottom: 8px;
+  color: #e8ddff;
+}
+
+/* INTERESTS */
+.interest-title {
+  margin-top: 28px;
+  margin-bottom: 12px;
+  color: #00f5ff;
+}
+
+.interests {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.interests span {
+  background: rgba(255,255,255,0.15);
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .intro-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .intro-right h1 {
+    font-size: 2.2rem;
+  }
+
+  .intro-text {
+    max-width: 100%;
+  }
+}
